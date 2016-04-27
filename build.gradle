@@ -1,0 +1,20 @@
+apply plugin: 'java'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.6.2'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+}
+
+jar.baseName = 'JaWS'
+
+jar {
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    manifest {
+        attributes 'Main-Class': 'chroom.Main'
+   }
+}

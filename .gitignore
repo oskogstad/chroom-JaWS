@@ -1,0 +1,15 @@
+# java
+*.class
+*.jar
+
+# gradle
+.gradle
+build/
+
+# mac stuff
+.DS_Store
+._*
+
+
+#other
+chatlog.txt
