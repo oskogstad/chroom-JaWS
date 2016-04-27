@@ -3,14 +3,16 @@ apply plugin: 'java'
 repositories {
     mavenLocal()
     mavenCentral()
+    maven { url "https://jitpack.io" }
 }
 
 dependencies {
     compile group: 'com.google.code.gson', name: 'gson', version: '2.6.2'
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+    compile 'com.github.oskogstad:JaWS:master-SNAPSHOT'
 }
 
-jar.baseName = 'JaWS'
+jar.baseName = 'chroom'
 
 jar {
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
